@@ -12,7 +12,7 @@ public class CompraTest {
 //        Compra compra = new Compra();
         TaxaDeEntrega entrega = new TaxaDeEntrega();
         //then
-        double taxas = entrega.calcularTaxas(10,SEDEX);
+        double taxas = entrega.calcularTaxas(10,new EntregaComSEDEX());
         double expected = 4.0;
         //verify
         assertEquals(expected,taxas,0.0001);
@@ -24,7 +24,7 @@ public class CompraTest {
 //        Compra compra = new Compra();
         TaxaDeEntrega entrega = new TaxaDeEntrega();
         //then
-        double taxas = entrega.calcularTaxas(10,PAC);
+        double taxas = entrega.calcularTaxas(10,new EntregaComPAC());
         double expected = 3.0;
         //verify
         assertEquals(expected,taxas,0.0001);
@@ -35,7 +35,7 @@ public class CompraTest {
 //        Compra compra = new Compra();
         TaxaDeEntrega entrega = new TaxaDeEntrega();
         //then
-        double taxas = entrega.calcularTaxas(10,CORREIOS);
+        double taxas = entrega.calcularTaxas(10,new EntregaComCorreios());
         double expected = 2.0;
         //verify
         assertEquals(expected,taxas,0.0001);
