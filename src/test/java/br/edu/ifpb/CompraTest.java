@@ -1,5 +1,9 @@
 package br.edu.ifpb;
 
+import br.edu.ifpb.strategy.EntregaComFEDEX;
+import br.edu.ifpb.strategy.EntregaComCorreios;
+import br.edu.ifpb.strategy.EntregaComSEDEX;
+import br.edu.ifpb.strategy.EntregaComPAC;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
