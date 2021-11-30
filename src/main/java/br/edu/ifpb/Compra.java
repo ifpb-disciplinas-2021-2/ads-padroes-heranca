@@ -25,5 +25,16 @@ public class Compra {
             .mapToDouble(ItemDeVenda::subTotal)
             .sum();
     }
+    public double calcularTaxas(int quantidadeItens, String tipoDeEntrega){
+        //sedex
+        //pac
+        if("sedex".equals(tipoDeEntrega)){
+            return quantidadeItens * 0.4; // 40%
+        }
+        if("pac".equals(tipoDeEntrega)){
+            return quantidadeItens * 0.3; // 30%
+        }
+        return 0.0;
+    }
     
 }
