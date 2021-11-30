@@ -17,26 +17,26 @@ public class TaxaDeEntrega {
         //sedex
         //pac
         if(TipoEntrega.SEDEX == tipoDeEntrega){
-            return taxasComSEDEX(quantidadeItens); 
+            return new EntregaComSEDEX().taxasComSEDEX(quantidadeItens); 
         }
         if(TipoEntrega.PAC == tipoDeEntrega){
-            return taxasComPAC(quantidadeItens); 
+            return new EntregaComPAC().taxasComPAC(quantidadeItens); 
         }
         if(TipoEntrega.CORREIOS == tipoDeEntrega){
-            return taxasComCorreios(quantidadeItens); 
+            return new EntregaComCorreios().taxasComCorreios(quantidadeItens); 
         }
         return 0.0;
     }
 
-    private double taxasComCorreios(int quantidadeItens) {
-        return quantidadeItens * 0.2; // 20%
-    }
+//    private double taxasComCorreios(int quantidadeItens) {
+//        return quantidadeItens * 0.2; // 20%
+//    }
 
-    private double taxasComPAC(int quantidadeItens) {
-        return quantidadeItens * 0.3; // 30%
-    }
+//    private double taxasComPAC(int quantidadeItens) {
+//        return quantidadeItens * 0.3; // 30%
+//    }
 
-    private double taxasComSEDEX(int quantidadeItens) {
-        return quantidadeItens * 0.4; // 40%
-    }
+//    private double taxasComSEDEX(int quantidadeItens) {
+//        return quantidadeItens * 0.4; // 40%
+//    }
 }
