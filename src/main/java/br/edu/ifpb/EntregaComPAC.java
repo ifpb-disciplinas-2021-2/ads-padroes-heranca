@@ -7,7 +7,8 @@ package br.edu.ifpb;
  */
 public class EntregaComPAC implements Entrega {
 
-    public double calcularTaxas(int quantidadeItens) {
-        return quantidadeItens * 0.3; // 30%
+    @Override
+    public double calcularTaxas(Compra compra) {
+        return compra.itens() * 0.3; // 30%
     }
 }

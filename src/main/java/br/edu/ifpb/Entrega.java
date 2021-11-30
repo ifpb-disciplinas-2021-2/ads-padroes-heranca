@@ -7,6 +7,6 @@ package br.edu.ifpb;
  */
 public interface Entrega {
 
-    double calcularTaxas(int quantidadeItens);
+    double calcularTaxas(Compra compra);
     
 }

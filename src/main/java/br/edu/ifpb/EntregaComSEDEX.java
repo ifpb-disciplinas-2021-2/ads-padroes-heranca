@@ -8,7 +8,7 @@ package br.edu.ifpb;
 public class EntregaComSEDEX implements Entrega {
 
     @Override
-    public double calcularTaxas(int quantidadeItens) {
-        return quantidadeItens * 0.4; // 40%
+    public double calcularTaxas(Compra compra) {
+        return compra.itens() * 0.4; // 40%
     }
 }

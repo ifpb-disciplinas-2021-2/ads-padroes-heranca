@@ -6,7 +6,7 @@ package br.edu.ifpb;
  * @since 30/11/2021, 10:35:29
  */
 public class TaxaDeEntrega { //utilitária
-    public double calcularTaxas(int quantidadeItens, Entrega tipoDeEntrega) {
-        return tipoDeEntrega.calcularTaxas(quantidadeItens);
-    }
+//    public double calcularTaxas(int quantidadeItens, Entrega tipoDeEntrega) {
+//        return tipoDeEntrega.calcularTaxas(quantidadeItens);
+//    }
 }
