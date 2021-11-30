@@ -29,5 +29,8 @@ public class Compra {
         return itens.size();
     }
    
+    public double taxas(int quantidadeItens, Entrega tipoDeEntrega) {
+        return tipoDeEntrega.calcularTaxas(quantidadeItens);
+    }
     
 }

@@ -1,6 +1,5 @@
 package br.edu.ifpb;
 
-import static br.edu.ifpb.TaxaDeEntrega.TipoEntrega.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,36 +7,31 @@ public class CompraTest {
 
     @Test
     public void testeTaxaComSedex() {
-        //given
-//        Compra compra = new Compra();
-        TaxaDeEntrega entrega = new TaxaDeEntrega();
-        //then
-        double taxas = entrega.calcularTaxas(10,new EntregaComSEDEX());
+        Compra compra = new Compra();
+        double taxas = compra.taxas(10,new EntregaComSEDEX());
         double expected = 4.0;
-        //verify
         assertEquals(expected,taxas,0.0001);
     }
 
     @Test
     public void testeTaxaComPAC() {
-        //given
-//        Compra compra = new Compra();
-        TaxaDeEntrega entrega = new TaxaDeEntrega();
-        //then
-        double taxas = entrega.calcularTaxas(10,new EntregaComPAC());
+        Compra compra = new Compra();
+        double taxas = compra.taxas(10,new EntregaComPAC());
         double expected = 3.0;
-        //verify
         assertEquals(expected,taxas,0.0001);
     }
     @Test
     public void testeTaxaComCorreios() {
-        //given
-//        Compra compra = new Compra();
-        TaxaDeEntrega entrega = new TaxaDeEntrega();
-        //then
-        double taxas = entrega.calcularTaxas(10,new EntregaComCorreios());
+        Compra compra = new Compra();
+        double taxas = compra.taxas(10,new EntregaComCorreios());
         double expected = 2.0;
-        //verify
+        assertEquals(expected,taxas,0.0001);
+    }
+    @Test
+    public void testeTaxaComFEDEX() {
+        Compra compra = new Compra();
+        double taxas = compra.taxas(10,new EntregaComFEDEX());
+        double expected = 8.0;
         assertEquals(expected,taxas,0.0001);
     }
 }
