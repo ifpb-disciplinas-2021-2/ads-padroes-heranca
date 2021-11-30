@@ -6,15 +6,24 @@ package br.edu.ifpb;
  * @since 30/11/2021, 10:35:29
  */
 public class TaxaDeEntrega {
-    
- public double calcularTaxas(int quantidadeItens, String tipoDeEntrega){
+
+    enum TipoEntrega {
+        SEDEX,//0
+        PAC, //1
+        CORREIOS
+    }
+
+    public double calcularTaxas(int quantidadeItens,TipoEntrega tipoDeEntrega) {
         //sedex
         //pac
-        if("sedex".equals(tipoDeEntrega)){
+        if(TipoEntrega.SEDEX == tipoDeEntrega){
             return quantidadeItens * 0.4; // 40%
         }
-        if("pac".equals(tipoDeEntrega)){
+        if(TipoEntrega.PAC == tipoDeEntrega){
             return quantidadeItens * 0.3; // 30%
+        }
+        if(TipoEntrega.CORREIOS == tipoDeEntrega){
+            return quantidadeItens * 0.2; // 20%
         }
         return 0.0;
     }
