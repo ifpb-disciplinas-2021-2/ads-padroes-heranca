@@ -16,8 +16,9 @@ public class Compra {
     private Desconto desconto;
 
     public Compra() {
+        this(new SemDesconto()); // comportamento default é que não tenhamos descontos
     }
-    
+    // ctor principal
     public Compra(Desconto desconto) {
         this.desconto = desconto;
     }
@@ -44,7 +45,7 @@ public class Compra {
 
     
     public double aplicarDesconto(){ //quanto de desconto vamos ter nesta compra
-        if(desconto ==null) return valorTotal(); //sem desconto
+//        if(desconto ==null) return valorTotal(); //sem desconto
         return desconto.aplicarEm(valorTotal());
     }
     public double taxas(Entrega tipoDeEntrega) {

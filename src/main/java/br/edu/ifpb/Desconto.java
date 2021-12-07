@@ -9,7 +9,5 @@ public interface Desconto {
 
     
     public double aplicarEm(double desconto);
-//    { //R$ 10
-//        return desconto;
-//    }
+
 }
