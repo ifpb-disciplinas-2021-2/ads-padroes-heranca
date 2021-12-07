@@ -1,5 +1,7 @@
 package br.edu.ifpb;
 
+import br.edu.ifpb.nullObject.DescontoPercentual;
+import br.edu.ifpb.nullObject.DescontoAbsoluto;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

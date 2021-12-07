@@ -1,4 +1,6 @@
-package br.edu.ifpb;
+package br.edu.ifpb.nullObject;
+
+import br.edu.ifpb.Desconto;
 
 /**
  * @author Ricardo Job

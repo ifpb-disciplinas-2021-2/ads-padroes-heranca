@@ -16,7 +16,10 @@ public class Compra {
     private Desconto desconto;
 
     public Compra() {
-        this(new SemDesconto()); // comportamento default é que não tenhamos descontos
+//        this(new SemDesconto()); // comportamento default é que não tenhamos descontos
+//        this(new Desconto.SmartDesconto()); // comportamento default é que não tenhamos descontos
+        this(Desconto.SEMDESCONTO); // comportamento default é que não tenhamos descontos
+    
     }
     // ctor principal
     public Compra(Desconto desconto) {

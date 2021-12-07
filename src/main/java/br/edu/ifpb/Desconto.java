@@ -7,7 +7,17 @@ package br.edu.ifpb;
  */
 public interface Desconto {
 
-    
     public double aplicarEm(double desconto);
+    
+//    public static final Desconto SEMDESCONTO = new SemDesconto();
+    public static final Desconto SEMDESCONTO = (double d) -> d;
 
+//    class SmartDesconto implements Desconto { //classes Smarts
+//
+//        @Override
+//        public double aplicarEm(double desconto) {
+//            return desconto;
+//        }
+//
+//    }
 }
