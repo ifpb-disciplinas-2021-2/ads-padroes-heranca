@@ -13,6 +13,7 @@ public class Compra {
 
     private List<ItemDeVenda> itens = new ArrayList<>();
     private LocalDate criadaEm = LocalDate.now();
+    private Desconto desconto;
 
     public void adicionar(int quantidade,Produto produto) {
         ItemDeVenda item = new ItemDeVenda(
@@ -34,6 +35,11 @@ public class Compra {
 //        return itens.size();
     }
 
+    
+    public double aplicarDesconto(){ //quanto de desconto vamos ter nesta compra
+        if(desconto ==null) return valorTotal(); //sem desconto
+        return desconto.aplicarEm(valorTotal());
+    }
     public double taxas(Entrega tipoDeEntrega) {
         return tipoDeEntrega.calcularTaxas(this);
     }
