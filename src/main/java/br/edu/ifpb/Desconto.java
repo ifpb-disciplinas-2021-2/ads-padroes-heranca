@@ -5,10 +5,11 @@ package br.edu.ifpb;
  * @mail ricardo.job@ifpb.edu.br
  * @since 07/12/2021, 10:14:14
  */
-public class Desconto {
+public interface Desconto {
 
     
-    public double aplicarEm(double desconto){ //R$ 10
-        return desconto;
-    }
+    public double aplicarEm(double desconto);
+//    { //R$ 10
+//        return desconto;
+//    }
 }

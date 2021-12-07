@@ -15,6 +15,13 @@ public class Compra {
     private LocalDate criadaEm = LocalDate.now();
     private Desconto desconto;
 
+    public Compra() {
+    }
+    
+    public Compra(Desconto desconto) {
+        this.desconto = desconto;
+    }
+
     public void adicionar(int quantidade,Produto produto) {
         ItemDeVenda item = new ItemDeVenda(
             quantidade,produto
