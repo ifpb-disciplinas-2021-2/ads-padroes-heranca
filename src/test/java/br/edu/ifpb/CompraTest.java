@@ -7,7 +7,7 @@ import br.edu.ifpb.strategy.EntregaComPAC;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CompraTest {
+public class CompraTest{
 
     @Test
     public void testeTaxaComSedex() {
