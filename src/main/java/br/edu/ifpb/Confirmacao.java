@@ -21,17 +21,19 @@ public abstract class Confirmacao {
         //calcular o valor total
         double valorComDesconto = aplicarDesconto(compra);
         double valorTotal = valorComDesconto + taxas;
-        pagar(valorTotal); //hook method
-        confirmar(compra);
+//        pagar(valorTotal); //responsabilidade diferente da Confirmação
+        String codigoPagamento = pagamento().pagar(valorTotal);
+        confirmar(codigoPagamento, compra); //hook method
         
     }
     
+    protected abstract Pagamento pagamento();
+    
     // a vista, boleto, carto, prazo
-    protected abstract void pagar(double valorTotal); //comportamento seja definido na subclasse
+//    protected abstract void pagar(double valorTotal); //comportamento seja definido na subclasse
 
-    protected void confirmar(Compra compra) {
-        System.out.println("confimando a compra...");
-    }
+    protected abstract void confirmar(String codigoPagamento,Compra compra);
+    
     private double aplicarDesconto(Compra compra){
         return desconto.aplicarEm(compra.valorTotal());
     }

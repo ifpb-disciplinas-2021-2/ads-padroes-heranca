@@ -1,8 +1,10 @@
 package br.edu.ifpb.templateMethod;
 
+import br.edu.ifpb.factory.Boleto;
 import br.edu.ifpb.Compra;
 import br.edu.ifpb.Confirmacao;
 import br.edu.ifpb.Desconto;
+import br.edu.ifpb.Pagamento;
 
 /**
  * @author Ricardo Job
@@ -15,15 +17,17 @@ public class ConfirmacaoAVista extends Confirmacao{
         super(compra,desconto);
     }
     
-    @Override
-    protected void pagar(double valorTotal) { //definindo o comportamento 
-        System.out.println("Pagamento com Confirmação à vista: "+valorTotal);
+        @Override
+    protected Pagamento pagamento() { //não estático
+        return new Boleto();
     }
 
     @Override
-    protected void confirmar(Compra compra) {
+    protected void confirmar(String codigoPagamento,Compra compra) {
         System.out.println("Confirmando a compra realizada à vista!!");
+        System.out.println("A compra para o código: "+codigoPagamento+" foi confimada");
     }
+
     
 
 }

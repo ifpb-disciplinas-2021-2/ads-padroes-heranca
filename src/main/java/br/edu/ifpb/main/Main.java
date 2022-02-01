@@ -4,8 +4,9 @@ import br.edu.ifpb.Compra;
 import br.edu.ifpb.Confirmacao;
 import br.edu.ifpb.Desconto;
 import br.edu.ifpb.Entrega;
-import br.edu.ifpb.templateMethod.ConfirmacaoAVista;
+import br.edu.ifpb.Pagamento;
 import br.edu.ifpb.strategy.EntregaComCorreios;
+import br.edu.ifpb.templateMethod.ConfirmacaoAVista;
 
 /**
  * @author Ricardo Job
@@ -16,7 +17,13 @@ public class Main {
     public static void main(String[] args) {
         Compra compra = new Compra();
         Entrega entrega = new EntregaComCorreios();
+//        Pagamento pagamento = new Boleto();
         Confirmacao confirmacao = new ConfirmacaoAVista(compra,Desconto.SEMDESCONTO);
         confirmacao.concluir(entrega);
+        
+        // ConfirmacaoAPrazo -> CartaoDeCredito
+        // ConfirmacaoAVista -> Boleto
+        
+        Pagamento pagamento = Pagamento.boleto();
     }
 }

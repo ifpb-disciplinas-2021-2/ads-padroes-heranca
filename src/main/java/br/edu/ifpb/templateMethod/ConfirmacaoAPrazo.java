@@ -1,8 +1,10 @@
 package br.edu.ifpb.templateMethod;
 
+import br.edu.ifpb.factory.CartaoDeCredito;
 import br.edu.ifpb.Compra;
 import br.edu.ifpb.Confirmacao;
 import br.edu.ifpb.Desconto;
+import br.edu.ifpb.Pagamento;
 
 /**
  * @author Ricardo Job
@@ -16,8 +18,14 @@ public class ConfirmacaoAPrazo extends Confirmacao{
     }
 
     @Override
-    protected void pagar(double valorTotal) {
-        System.out.println("Confirmação a prazo. Aguardando o pagamento "+valorTotal);
+    protected Pagamento pagamento() {
+        return new CartaoDeCredito();
     }
+
+    @Override
+    protected void confirmar(String codigoPagamento,Compra compra) {
+        System.out.println("A compra para o código: "+codigoPagamento+" foi confimada");
+    }
+
 
 }
